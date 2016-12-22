@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"/>
+    <style>
+        .app{
+            width: 80%;
+            margin: 10%;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <h2>用户登录</h2>
+    <form id="form" action="libapp1.html"></form>
+    <!--当提交表单时，表单数据会提交到名为 "libapp1.html" 的页面-->
+    <div class="form-group has-feedback" id="usernameBox">
+        <label class="control-label" for="username">User Name</label>
+        <input id="username" type="text" class="form-control">
+        <span id="s1" class="glyphicon glyphicon-ok form-control-feedback sr-only"></span>
+        <span id="s2" class="glyphicon glyphicon-remove form-control-feedback sr-only"></span>
+    </div>
+    <div class="form-group has-feedback" id="pwdBox">
+        <label class="control-label">User Password</label>
+        <input id="password" type="password" class="form-control">
+        <span id="s3" class="glyphicon glyphicon-ok form-control-feedback sr-only"></span>
+        <span id="s4" class="glyphicon glyphicon-remove form-control-feedback sr-only"></span>
+    </div>
+    <button id="btn" type="button" class="btn btn-info">登录</button>
+</div>
+<script src="./bootstrap/js/jquery-3.1.0.js"></script>
+<script>
+    $(function(){
+        $("#username").blur(function(){
+            if($(this).val()!=="huanglei"){
+                $("#usernameBox").addClass("has-error");
+                $("#s2").removeClass("sr-only");
+                $("#s1").addClass("sr-only");
+            }else{
+                $("#usernameBox").removeClass("has-error");
+                $("#usernameBox").addClass("has-success has-feedback")
+                $("#s1").removeClass("sr-only");
+                $("#s2").addClass("sr-only");
+            }
+        })
+        $("#password").blur(function(){
+            if($(this).val()!=="1994927hl"){
+                $("#pwdBox").addClass("has-error has-feedback");
+                $("#s3").addClass("sr-only");
+                $("#s4").removeClass("sr-only");
+            }else{
+                $("#pwdBox").removeClass("has-error has-feedback");
+                $("#pwdBox").addClass("has-success has-feedback");
+                $("#s3").removeClass("sr-only");
+                $("#s4").addClass("sr-only");
+            }
+        })
+        $("#btn").click(function () {
+            if($("#username").val()=="huanglei" && $("#password").val()=="1994927hl"){
+                $("#form").submit();
+            }else if($("#username").val()=="huanglei" && $("#password").val()!=="1994927hl"){
+                $("#pwdBox").addClass("has-error");
+            }else if($("#username").val()!=="huanglei" && $("#password").val()=="1994927hl"){
+                $("#usernameBox").addClass("has-error");
+            }else if($("#username").val()!=="huanglei" && $("#password").val()!=="1994927hl"){
+                $("#usernameBox").addClass("has-error");
+            }
+        })
+    })
+</script>
+</body>
+</html>

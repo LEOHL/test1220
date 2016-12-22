@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body{
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#b8c4cb), to(#f6f6f8));
+            text-align: center;
+        }
+        img{
+            max-width: 70%;
+            height: auto;
+            margin: 15%;
+        }
+        img:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">图书列表</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z1.jpg" alt="">
+                <h4>歌剧魅影</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z2.png" alt="">
+                <h4>少年维特之烦恼</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z3.jpg" alt="">
+                <h4>罗亭·贵族之家</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z4.jpg" alt="">
+                <h4>战地钟声</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z5.jpg" alt="">
+                <h4>黑郁金香</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z6.jpg" alt="">
+                <h4>远大前程</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z7.jpg" alt="">
+                <h4>黑桃皇后</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z8.jpg" alt="">
+                <h4>罪与罚</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z9.jpg" alt="">
+                <h4>包法利夫人</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z10.jpg" alt="">
+                <h4>卡斯特桥市长</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z11.jpg" alt="">
+                <h4>当代英雄</h4>
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-3"><img src="img/z12.jpg" alt="">
+                <h4>理智与情感</h4>
+            </div>
+        </div>
+    </div>
+    <script src="./bootstrap/js/jquery-3.1.0.js"></script>
+    <script>
+            $(function(){
+                $("img").click(function(){
+                    window.location.href="libapp2.html";
+//                    window.open("libapp2.html");
+                    //window.open是重新打开一个页面
+                });
+            })
+    </script>
+</body>
+</html>
