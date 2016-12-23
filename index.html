@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <meta name="viewport" content="width=450,height=832" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
 <style>
@@ -16,7 +17,7 @@
         height: 100vh;
         background-image: url("img/a1.jpg");
         position: absolute;
-        /*background-repeat: no-repeat;*/
+        background-repeat: no-repeat;
     }
     .navbar-left label,button{
         border-radius: 5px;
@@ -55,14 +56,39 @@
         padding: 1em;
         text-decoration: none;
     }
-    /*@media screen and (max-width: 600px) {*/
-        /*#bgimg {*/
-            /*background-image: url("img/blurry-mobile.jpg");*/
-        /*}*/
-    /*}*/
+    #menu{
+        display: none;
+    }
+    @media screen and (max-width: 600px) {
+        #bgimg {
+            background-image: url("img/blurry-mobile.jpg");
+        }
+        #formnav{
+            display: none;
+        }
+        #formnav label,button{
+            margin-left: 2em;
+        }
+        #jum1 a{
+            display: block;
+            width: 50%;
+            margin:0 auto;
+        }
+        #menu{
+            display: inline-block;
+            width: 2.8em;
+            height: 2.8em;
+            background-image: url("img/Menut.png");
+            background-size: 100%;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+        }
+    }
 </style>
 <body>
     <div id="bgimg"></div>
+    <span id="menu"></span>
     <nav class="navbar" style="border-radius: 0;top:2em;">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -77,7 +103,7 @@
                 <a class="navbar-brand" href="#" style="font-size: 3em;font-weight: bold;color: #20b9ff;font-family: bariol-bold;position: absolute;left: 2em">Library</a>
             </div>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 2em">
-                <form class="navbar-form navbar-left" role="search">
+                <form class="navbar-form navbar-left" role="search" id="formnav">
                     <label style="color: white;margin-right: 2em;">Learn more</label>
                     <button class="btn-primary" id="like">Like<label class="glyphicon glyphicon-star-empty"></label><span>0</span></button>
                     <button class="btn-info" style="margin-left: 2em">Loading Again</button>
@@ -204,7 +230,7 @@
             Clouco Spaces for free, with no limitations. Nice!</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more about beta</a></p>
     </div>
-    <div class="jumbotron" style="background-color:#428bca;text-align: center;color: white;">
+    <div class="jumbotron" id="jum1" style="background-color:#428bca;text-align: center;color: white;">
         <img src="img/iconforwebstore90px.png" style="margin-top: -5em;">
         <h2 style="width: 3.7em;display: inline-block;">Looking for Clouco?</h2>
         <p style="width: 15em;display: inline-block;font-size: 1.2em;"> Clouco.com is our solution for individuals that gives you an online address-book built on connections.</p>
@@ -267,7 +293,7 @@
         </div>
     </div>
     <div class="jumbotron" style="text-align: center;color: #428bca;margin-bottom: 0" id="juma">
-        <div class="content" style="width: 35%;margin: 0 auto">
+        <div class="content" style="width:70%;margin: 0 auto">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Terms</a>
@@ -294,6 +320,9 @@
             });
             $("#user").click(function(){
                 alert("用户名：huanglei  密码：1994927hl");
+            });
+            $("#menu").click(function(){
+                $("#formnav").slideToggle(100);
             });
         })
     </script>
